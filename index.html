@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="booksManager">
+	<head>
+		<meta charset="UTF-8">
+		<title>Books CMS</title>
+		
+		<!-- online links -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		
+		<!-- offline links -->
+		<link rel="stylesheet" href="vendor/foundation/css/foundation.min.css">
+		<link rel="stylesheet" href="vendor/angular-material-icons/angular-material-icons.css">
+		<link rel="stylesheet" href="assets/css/app.css">
+		
+	</head>
+	<body>
+		
+		<div class="page-container" ng-controller="SidebarController">
+			<ng-include src="'views/includes/header.htm'"></ng-include>
+			<div class="flex-page-container">
+				<div class="sidebar-container" ng-include="'views/includes/sidebar.htm'" ng-class="sidebarClass"></div>
+				<div class="main-container" ui-view>
+				</div>
+			</div>
+		</div>
+		
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/foundation/js/foundation.min.js"></script>
+		<script>$(document).foundation();</script>
+		<script src="vendor/angular/angular.min.js"></script>
+		<script src="vendor/angular-ui-router/angular-ui-router.js"></script>
+		
+		<!-- Modules -->
+		<script src="./modules.js"></script>
+		<!-- Config -->
+		<script src="./config.js"></script>
+		<!-- Routers -->
+		<script src="./routes.js"></script>
+			
+		<!-- Controllers -->
+		<script src="controllers/DashboardController.js"></script>
+		<script src="controllers/SidebarController.js"></script>
+		<script src="controllers/StatsController.js"></script>
+		
+		<!-- Roles Controllers -->
+		<script src="controllers/RolesListController.js"></script>
+		<script src="controllers/RolesCreateController.js"></script>
+		<script src="controllers/RolesUpdateController.js"></script>
+		<script src="controllers/RolesViewController.js"></script>
+		
+		<!-- User Controllers -->
+		<script src="controllers/UsersListController.js"></script>
+		<script src="controllers/UsersCreateController.js"></script>
+		<script src="controllers/UsersUpdateController.js"></script>
+		<script src="controllers/UsersViewController.js"></script>
+		
+		<!-- Books Controllers -->
+		<script src="controllers/BooksListController.js"></script>
+		<script src="controllers/BooksCreateController.js"></script>
+		<script src="controllers/BooksUpdateController.js"></script>
+		<script src="controllers/BooksViewController.js"></script>
+		
+		<!-- Publisher Controllers -->
+		<script src="controllers/PublisherListController.js"></script>
+		<script src="controllers/PublisherCreateController.js"></script>
+		<script src="controllers/PublisherUpdateController.js"></script>
+		<script src="controllers/PublisherViewController.js"></script>
+		
+		<!-- Subjeect Controllers -->
+		<script src="controllers/SubjectListController.js"></script>
+		<script src="controllers/SubjectCreateController.js"></script>
+		<script src="controllers/SubjectUpdateController.js"></script>
+		<script src="controllers/SubjectViewController.js"></script>
+		
+		<!-- Language Contorllers -->
+		<script src="controllers/LanguageListController.js"></script>
+		<script src="controllers/LanguageCreateController.js"></script>
+		<script src="controllers/LanguageUpdateController.js"></script>
+		<script src="controllers/LanguageViewController.js"></script>
+		
+		<!-- Book Type Controllers -->
+		
+		<script src="controllers/BooktypeCreateController.js"></script>
+		<script src="controllers/BooktypeListController.js"></script>
+		<script src="controllers/BooktypeUpdateController.js"></script>
+		<script src="controllers/BooktypeViewController.js"></script>
+		
+	</body>
+</html>

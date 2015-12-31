@@ -1,0 +1,50 @@
+<h4>View Users</h4>
+
+<blockquote>
+	<div class="row full-width">
+		<div class="small-6 columns">
+			<label>
+				First Name
+				<input type="text" ng-model="users.first_name" disabled>
+			</label>
+		</div>
+		<div class="small-6 columns">
+			<label>
+				Last Name
+				<input type="text" ng-model="users.last_name" disabled>
+			</label>
+		</div>
+	</div>
+	
+	<div class="row full-width">
+		<div class="small-12 columns">
+			<label>
+				Email
+				<input type="text" ng-model="users.email" disabled>
+			</label>
+			
+			<label>
+				Date
+				<input type="date" ng-model="users.dob" disabled>
+			</label>
+		</div>
+	</div>
+	
+	<div class="row full-width">
+		<div class="small-6 columns">
+			<select ng-model="users.gender" disabled>
+				<option value="gender" style="display: none;">Gender</option>
+				<option value="m">Male</option>
+				<option value="f">Female</option>
+			</select>
+		</div>
+		<div class="small-6 columns">
+			<select ng-model="users.user_role_id" disabled>
+				<option value="role" style="display: none;">User Roles</option>
+				<option ng-repeat="role in user_roles" ng-value="{{ role.id }}" value="{{ role.id }}">
+					{{ role.name }}
+				</option>
+			</select>
+		</div>
+	</div>
+</blockquote>

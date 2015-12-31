@@ -1,0 +1,34 @@
+<h4>Subjects List</h4>
+
+
+<blockquote ng-if="subjects.length == undefined">
+	<h6>There are currently no subjects. Cick <a href="#/subjects/create">here</a> to create.</h6>
+</blockquote>
+
+<blockquote ng-if="subjects.length > 0">
+	<h6>Create a subject <a href="#/subjects/create">here</a>.</h6>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="subject in subjects">
+				<td>{{ subject.id }}</td>
+				<td>{{ subject.name }}</td>
+				<td width="150">
+					<a href="#/subjects/{{ subject.id }}/view">
+						<i class="material-icons table-actions">remove_red_eye</i>
+					</a>
+					<a href="#/subjects/{{ subject.id }}/update">
+						<i class="material-icons table-actions">mode_edit</i>
+					</a>
+					<i class="material-icons delete-table-actions" ng-click="deleteContent();">delete</i>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</blockquote>

@@ -1,0 +1,32 @@
+<div class="navigation-container">
+	<div class="navigation-item-container" ng-repeat="item in sidebarNavigation">
+		<div class="flex-navigation-item-container">
+			<a href="{{ item.href }}">
+				<div class="left-navigation-item-container">
+					<i class="material-icons">{{ item.icon }}</i>
+				</div>
+				<div class="right-navigation-item-container">
+					<span>{{ item.value }}</span>
+				</div>
+			</a>
+				<div class="additional-navigation-item-container" ng-hide="!item.expand.value">
+					<i class="material-icons" ng-click="expand();" ng-hide="!item.expand.status">expand_less</i>
+					<i class="material-icons" ng-click="expand();" ng-hide="item.expand.status">expand_more</i>
+				</div>
+		</div>
+		<div class="additional-navigation-container" ng-hide="item.sub">
+			<div ng-repeat="sub in item.additional">
+				<div class="additional-navigation-items-container">
+					<a href="{{ sub.href }}">
+						<div class="left-additional-navigation-items-container">
+							<i class="material-icons">{{ sub.icon }}</i>
+						</div>
+						<div class="right-additional-navigation-items-container">
+							<span>{{ sub.value }}</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

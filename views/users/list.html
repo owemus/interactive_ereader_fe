@@ -1,0 +1,40 @@
+<h4>User List</h4>
+
+
+<blockquote ng-if="users.length == undefined">
+	<h6>There are currently no users. Cick <a href="#/users/create">here</a> to create.</h6>
+</blockquote>
+
+<blockquote ng-if="users.length != undefined">
+	<h6>Create a user <a href="#/users/create">here</a>.</h6>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>Role</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="user in users">
+				<td>{{ user.id }}</td>
+				<td>{{ user.first_name }}</td>
+				<td>{{ user.last_name }}</td>
+				<td>{{ user.email }}</td>
+				<td>{{ user.role.name }}</td>
+				<td width="150">
+					<a href="#/users/{{ user.id }}/view">
+						<i class="material-icons table-actions">remove_red_eye</i>
+					</a>
+					<a href="#/users/{{ user.id }}/update">
+						<i class="material-icons table-actions">mode_edit</i>
+					</a>
+					<i class="material-icons delete-table-actions" ng-click="deleteContent();">delete</i>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</blockquote>

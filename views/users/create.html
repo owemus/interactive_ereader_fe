@@ -1,0 +1,55 @@
+<h4>Create Users</h4>
+
+<blockquote>
+	<div class="row full-width">
+		<div class="small-6 columns">
+			<label>
+				First Name
+				<input type="text" ng-model="users.first_name">
+			</label>
+		</div>
+		<div class="small-6 columns">
+			<label>
+				Last Name
+				<input type="text" ng-model="users.last_name">
+			</label>
+		</div>
+	</div>
+	
+	<div class="row full-width">
+		<div class="small-12 columns">
+			<label>
+				Email
+				<input type="text" ng-model="users.email">
+			</label>
+			
+			<label>
+				Date
+				<input type="date" ng-model="users.dob">
+			</label>
+		</div>
+	</div>
+	
+	<div class="row full-width">
+		<div class="small-6 columns">
+			<select ng-model="users.gender">
+				<option value="gender" style="display: none;">Gender</option>
+				<option value="m">Male</option>
+				<option value="f">Female</option>
+			</select>
+		</div>
+		<div class="small-6 columns">
+			<select ng-model="users.user_role_id">
+				<option value="role" style="display: none;">User Roles</option>
+				<option ng-repeat="role in user_roles" ng-value="{{ role.id }}" value="{{ role.id }}">
+					{{ role.name }}
+				</option>
+			</select>
+		</div>
+	</div>
+	<div class="row full-width">
+		<div class="small-12 columns">
+			<div class="button" ng-click="submitUsers();">Create</div>
+		</div>
+	</div>
+</blockquote>

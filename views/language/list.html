@@ -1,0 +1,34 @@
+<h4>Languages List</h4>
+
+
+<blockquote ng-if="languages.length == undefined">
+	<h6>There are currently no languages. Cick <a href="#/languages/create">here</a> to create.</h6>
+</blockquote>
+
+<blockquote ng-if="languages.length > 0">
+	<h6>Create a language <a href="#/languages/create">here</a>.</h6>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="language in languages">
+				<td>{{ language.id }}</td>
+				<td>{{ language.name }}</td>
+				<td width="150">
+					<a href="#/languages/{{ language.id }}/view">
+						<i class="material-icons table-actions">remove_red_eye</i>
+					</a>
+					<a href="#/languages/{{ language.id }}/update">
+						<i class="material-icons table-actions">mode_edit</i>
+					</a>
+					<i class="material-icons delete-table-actions" ng-click="deleteContent();">delete</i>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</blockquote>

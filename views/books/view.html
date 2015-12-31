@@ -1,0 +1,121 @@
+<h4>View Books</h4>
+
+<blockquote>
+	
+	<div class="page-tab-container">
+		<div class="row full-width">
+			<div class="small-12 columns">
+				<ul>
+					<li ng-class="{'selected': (page_choice == 'book')}" ng-click="page_choice = 'book'">
+						Book Details
+					</li>
+					<li ng-class="{'selected': (page_choice == 'chapter')}" ng-click="page_choice = 'chapter'">
+						Chapters & Pages
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="page-choice-wrapper" ng-hide="page_choice != 'book'">
+		<div class="row full-width">
+			<div class="small-4 columns">
+				<label>
+					Book Title
+					<input type="text" ng-model="books.title" disabled>
+				</label>
+			</div>
+			<div class="small-4 columns">
+				<label>
+					Published Date
+					<input type="date" ng-model="books.published" disabled>
+				</label>
+			</div>
+			<div class="small-4 columns">
+				<label for="">
+					&nbsp;
+					<select ng-model="books.book_type_id" disabled>
+						<option value="booktype" style="display: none;">Book Type</option>
+						<option ng-repeat="booktype in booktypes" ng-value="{{ booktype.id }}" value="{{ booktype.id }}">
+							{{ booktype.name }}
+						</option>
+					</select>
+				</label>
+			</div>
+		</div>
+		
+		<div class="row full-width">
+			<div class="small-12 columns">
+				<label>
+					Description
+					<textarea ng-model="books.description" cols="30" rows="5" disabled></textarea>
+				</label>
+			</div>
+		</div>
+		
+		<div class="row full-width">
+			<div class="small-6 columns">
+				<label>
+					ISBN
+					<input type="text" ng-model="books.isbn" disabled>
+				</label>
+			</div>
+			<div class="small-6 columns">
+				<label>
+					ISBN-13
+					<input type="text" ng-model="books['isbn-13']" disabled>
+				</label>
+			</div>
+		</div>
+		
+		<div class="row full-width">
+			<div class="small-4 columns">
+				<select ng-model="books.publisher_id" disabled>
+					<option value="publisher" style="display: none;">Publisher</option>
+					<option ng-repeat="publisher in publishers" ng-value="{{ publisher.id }}" value="{{ publisher.id }}">
+						{{ publisher.name }}
+					</option>
+				</select>
+			</div>
+			<div class="small-4 columns">
+				<select ng-model="books.language_id" disabled>
+					<option value="language" style="display: none;">Language</option>
+					<option ng-repeat="language in languages" ng-value="{{ language.id }}" value="{{ language.id }}">
+						{{ language.name }}
+					</option>
+				</select>
+			</div>
+			<div class="small-4 columns">
+				<select ng-model="books.subject_id" disabled>
+					<option value="subject" style="display: none;">Subject</option>
+					<option ng-repeat="subject in subjects" ng-value="{{ subject.id }}" value="{{ subject.id }}">
+						{{ subject.name }}
+					</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	
+	<div class="page-choice-wrapper" ng-hide="page_choice != 'chapter'">
+		<div class="row full-width">
+			<div class="small-12 columns">
+				<div ng-repeat="chapter in chapters">
+					<div class="row full-width">
+						<div class="small-10 columns">
+							<label>
+								Chapter Name
+								<input type="text" ng-model="chapter.name" disabled>
+							</label>
+						</div>
+						<div class="small-2 columns">
+							<label>
+								Page End
+								<input type="number" ng-model="chapter.page_end" disabled>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</blockquote>

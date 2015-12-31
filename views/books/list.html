@@ -1,0 +1,40 @@
+<h4>Books List</h4>
+
+
+<blockquote ng-if="books.length == undefined">
+	<h6>There are currently no books. Cick <a href="#/books/create">here</a> to create.</h6>
+</blockquote>
+
+<blockquote ng-if="books.length != undefined">
+	<h6>Create a book <a href="#/books/create">here</a>.</h6>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>ISBN</th>
+				<th>Title</th>
+				<th>Publisher</th>
+				<th>Language</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="book in books">
+				<td>{{ book.id }}</td>
+				<td>{{ book.isbn }}</td>
+				<td>{{ book.title }}</td>
+				<td>{{ book.publisher.name }}</td>
+				<td>{{ book.language.name }}</td>
+				<td width="150">
+					<a href="#/books/{{ book.id }}/view">
+						<i class="material-icons table-actions">remove_red_eye</i>
+					</a>
+					<a href="#/books/{{ book.id }}/update">
+						<i class="material-icons table-actions">mode_edit</i>
+					</a>
+					<i class="material-icons delete-table-actions" ng-click="deleteContent();">delete</i>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</blockquote>

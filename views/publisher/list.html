@@ -1,0 +1,34 @@
+<h4>Publishers List</h4>
+
+
+<blockquote ng-if="publishers.length == undefined">
+	<h6>There are currently no publishers. Cick <a href="#/publishers/create">here</a> to create.</h6>
+</blockquote>
+
+<blockquote ng-if="publishers.length > 0">
+	<h6>Create a publisher <a href="#/publishers/create">here</a>.</h6>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="publisher in publishers">
+				<td>{{ publisher.id }}</td>
+				<td>{{ publisher.name }}</td>
+				<td width="150">
+					<a href="#/publishers/{{ publisher.id }}/view">
+						<i class="material-icons table-actions">remove_red_eye</i>
+					</a>
+					<a href="#/publishers/{{ publisher.id }}/update">
+						<i class="material-icons table-actions">mode_edit</i>
+					</a>
+					<i class="material-icons delete-table-actions" ng-click="deleteContent();">delete</i>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</blockquote>
